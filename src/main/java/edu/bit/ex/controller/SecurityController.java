@@ -8,7 +8,7 @@ import lombok.extern.log4j.Log4j;
 
 
 @Log4j
-@RequestMapping("/*")
+@RequestMapping("/security/*")
 @Controller
 public class SecurityController {
 

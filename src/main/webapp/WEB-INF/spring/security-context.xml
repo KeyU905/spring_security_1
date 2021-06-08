@@ -14,6 +14,12 @@
    
    <!-- provider --> 
    <authentication-manager>
+	     <authentication-provider> 
+       <user-service> 
+         <user name="member" password="{noop}member" authorities="ROLE_MEMBER" /> 
+         <user name="manager" password="{noop}manager" authorities="ROLE_MEMBER" /> 
+       </user-service> 
+     </authentication-provider> 
 
    </authentication-manager>
 
