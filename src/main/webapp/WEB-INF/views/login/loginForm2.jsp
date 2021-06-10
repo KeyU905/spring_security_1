@@ -30,7 +30,7 @@
 	          </div>
 	          <div class="form-group">
 	              <label for="exampleDropdownFormPassword1">Password</label>
-	              <input type="password" class="form-control" name="password" placeholder="Password">
+	              <input type="password" class="form-control" name="pw" placeholder="Password">
 	          </div>
 	          <div class="form-check">
 	              <label class="form-check-label">
