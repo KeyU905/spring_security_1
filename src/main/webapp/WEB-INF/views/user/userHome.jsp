@@ -6,25 +6,28 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <title>회원가입</title>
+   <title>유저 페이지</title>
 </head>
 
 <body>
 
-<h1>회원가입</h1>
+<h1>유저 페이지입니다.</h1>
+<%--
+<p>principal: <sec:authentication property="principal"/></p>
+<p>MemberVO: <sec:authentication property="principal.member"/></p>
+<p>사용자이름: <sec:authentication property="principal.member.username"/></p>
+<p>사용자비밀번호: <sec:authentication property="principal.member.password"/></p>
+<p>사용자정보: <sec:authentication property="principal.member.authList"/></p>
+--%>
 
-<c:url value="/user/addUser" var="addUserUrl" />
-<p>${addUserUrl}</p>
-<form:form name="frmMember" action="${addUserUrl}" method="POST">
-    <p>
-        <label for="username">아이디</label>
-        <input type="text"  name="username" />
-    </p>
-    <p>
-        <label for="password">비밀번호</label>
-        <input type="password" name="password"/>
-    </p>
-    <button type="submit" class="btn">가입하기</button>
-</form:form>
+<p>principal: <sec:authentication property="principal"/></p>
+<p>EmpVO: <sec:authentication property="principal.emp"/></p>
+<p>사용자이름: <sec:authentication property="principal.emp.ename"/></p>
+<p>사용자월급: <sec:authentication property="principal.emp.sal"/></p>
+<p>사용자입사일자: <sec:authentication property="principal.emp.hiredate"/></p> 
+
+<p><a href="<c:url value="/" />">홈</a></p>
+
+
 </body>
 </html>
