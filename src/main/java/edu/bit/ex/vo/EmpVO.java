@@ -1,34 +1,34 @@
 package edu.bit.ex.vo;
 
-import java.util.List;
+import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.extern.log4j.Log4j;
 
-
-
-@Log4j
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-public class EmpVO  {
-	private String ename;
-	private String sal;
-	private String hiredate;
-	private String enabled;
-	private String authority;
-	
-	
-	//이거 int 아니어도 마이바티스가 String으로도 잘 한다고 하신다.
-	// 오류 나면 고치자
-	
-	private List<AuthVO> authList;
-  
+public class EmpVO {
+   
+   private String empno;
+   private String ename;
+   private String job;
+   private Timestamp hiredate;
+   private int sal;
+   private int comm;
+   private int deptno;
+   
+   public String getAuthority() {
+      if(getJob().toUpperCase().contains("MANAGER"))
+         return "ROLE_ADMIN";
+      else
+         return "ROLE_USER";
+      
+   }
 
 }
