@@ -29,5 +29,8 @@
 	<!-- Mapper Interface -->
 	<mybatis-spring:scan base-package="edu.bit.ex.mapper" />
 		
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+    	<property name="dataSource" ref="dataSource" /> 
+   </bean>   	
 	
 </beans>

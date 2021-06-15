@@ -1,15 +1,10 @@
 package edu.bit.ex.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import edu.bit.ex.vo.UserVO;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.extern.log4j.Log4j;
 
 
 
@@ -21,4 +16,11 @@ public interface UserMapper  {
 	   @Insert("insert into AUTHORITIES (username,AUTHORITY) values(#{username},'ROLE_USER')")
 	   public void insertAuthorities(UserVO UserVO);
   
+	   @Delete("delete from users")
+	   public void deleteUsers();
+	   
+	   @Delete("delete from AUTHORITIES")
+	   public void deleteAuthorities();
+	   
+	   
 }
