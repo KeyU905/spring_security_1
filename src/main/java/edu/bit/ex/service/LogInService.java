@@ -22,26 +22,15 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @NoArgsConstructor
 @Service
-public class UserService {
-    // 아래 Autowired와 Inject는 같은 주입의 의미
+public class LogInService {
     
-    @Autowired
-    private BCryptPasswordEncoder passEncoder;
-
     @Inject
     private UserMapper userMapper;
 
-    @Transactional(rollbackFor = Exception.class)
-    public void addUser(UserVO userVO) {
-        
-        String password = userVO.getPassword();
-        String encode = passEncoder.encode(password);
-
-        userVO.setPassword(encode);
-
-        userMapper.insertUser(userVO);
-        userMapper.insertAuthorities(userVO);
-        
-    }
+    
+    public UserVO selectUser(UserVO userVO) throws Exception {
+        log.info("selectUser ..");
+        return userMapper.getUser(userVO) ;
+     }
 
 }

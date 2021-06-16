@@ -25,9 +25,11 @@
 </sec:authorize>
 
 <h3>
-    [<a href="<c:url value="/user/userForm" />">회원가입</a>] 
-    [<a href="<c:url value="/user/userHome" />">유저 홈</a>]
-    [<a href="<c:url value="/admin/adminHome" />">관리자 홈</a>]
+    [<a href="<c:url value="/login/loginForm" />">로그인</a>]
+    [<a href="<c:url value="/board/list" />">게시판</a>]
+    [<a href="<c:url value="/logout" />">로그아웃</a>]
+<%--     [<a href="<c:url value="/user/userHome" />">유저 홈</a>]
+    [<a href="<c:url value="/admin/adminHome" />">관리자 홈</a>] --%>
 <%--     [<a href="<c:url value="/restful/" />">게시판</a>] --%>
 </h3>
 </body>
