@@ -38,6 +38,18 @@ public class TxController {
         } else if (num == 4) {
             log.info("tx test4");
             txService.txTest4();
+            
+        }else if (num == 5) {
+            log.info("tx test5");
+            txService.txTest5();
+            
+        }else if (num == 6) {
+            log.info("tx test6");
+            txService.txTest6();
+            
+        }else if (num == 7) {
+            log.info("tx test7");
+            txService.txTest7();
         }
 
         

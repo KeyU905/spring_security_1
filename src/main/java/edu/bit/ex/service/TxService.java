@@ -122,4 +122,23 @@ public class TxService {
             throw new SQLException("SQLException for rollback");
     
     }
+    
+    //@Transactional의 rollbackFor 옵션을 이용하면 Rollback이 되는 클래스를 지정가능함.
+    // Exception예외로 롤백을 하려면 다음과 같이 지정하면됩니다. 
+    //@Transactional(rollbackFor = Exception.class) 
+    // 여러개의 예외를 지정할 수도 있습니다. @Transactional(rollbackFor = {RuntimeException.class, Exception.class})
+    @Transactional(rollbackFor = Exception.class)    
+    public void txTest7() {
+        try {
+       userMapper.deleteAuthorities();
+       userMapper.deleteUsers();
+       
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    
 }
